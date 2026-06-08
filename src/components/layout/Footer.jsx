@@ -8,9 +8,9 @@ const Footer = () => {
         <p>&copy; {new Date().getFullYear()} Lingora. Tüm hakları saklıdır.</p>
         <p className="mt-2 md:mt-0">
           <span className={`${BRAND_GRADIENT_TEXT} font-medium`}>
-            React + Supabase
+            Zei ve Toxyn
           </span>
-          {' '}ile geliştirildi
+          {' '}tarafından geliştirildi
         </p>
       </div>
     </footer>
