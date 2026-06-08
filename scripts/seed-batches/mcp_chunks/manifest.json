@@ -1,0 +1,27 @@
+[
+  {
+    "file": "batch-01-part1.json",
+    "rows": 199,
+    "chars": 29193
+  },
+  {
+    "file": "batch-02-part1.json",
+    "rows": 199,
+    "chars": 27845
+  },
+  {
+    "file": "batch-03-part1.json",
+    "rows": 199,
+    "chars": 28195
+  },
+  {
+    "file": "batch-04-part1.json",
+    "rows": 199,
+    "chars": 29785
+  },
+  {
+    "file": "batch-05-part1.json",
+    "rows": 179,
+    "chars": 26331
+  }
+]

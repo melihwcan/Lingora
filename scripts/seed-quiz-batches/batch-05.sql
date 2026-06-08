@@ -1,0 +1,20 @@
+-- Idempotent custom_quizzes seed (run once; duplicates skipped if re-run manually)
+INSERT INTO custom_quizzes (category, difficulty, question_text, option_a, option_b, option_c, option_d, correct_option)
+VALUES
+  ('health', 'advanced', 'The ___ can reduce reported pain.', 'Antimicrobial resistance', 'placebo effect', 'Health literacy', 'Public health', 'B'),
+  ('health', 'advanced', '___ diseases attack healthy tissue.', 'Telehealth parity', 'Precision medicine', 'Health equity', 'Autoimmune', 'D'),
+  ('foods', 'beginner', 'I eat an ___ every morning.', 'egg', 'apple', 'bread', 'cheese', 'B'),
+  ('foods', 'beginner', 'Fresh ___ smells wonderful.', 'chicken', 'bread', 'rice', 'fish', 'B'),
+  ('foods', 'beginner', 'She added ___ to the sandwich.', 'tomato', 'onion', 'potato', 'cheese', 'D'),
+  ('foods', 'beginner', 'We serve ___ with grilled chicken.', 'grape', 'rice', 'Watermelon', 'strawberry', 'B'),
+  ('foods', 'beginner', 'Roast ___ is my favorite meal.', 'Garlic', 'chicken', 'lemon', 'pepper', 'B'),
+  ('foods', 'intermediate', '___ the meat overnight.', 'preservative', 'Marinate', 'Organic', 'Fermentation', 'B'),
+  ('foods', 'intermediate', 'Use ___ sparingly at first.', 'pastry', 'Simmer', 'Grill', 'seasoning', 'D'),
+  ('foods', 'intermediate', 'This bakery sells ___ bread.', 'Spinach', 'broccoli', 'gluten-free', 'dough', 'C'),
+  ('foods', 'intermediate', '___ vegetables cost a bit more.', 'Avocado', 'Organic', 'dairy', 'seafood', 'B'),
+  ('foods', 'intermediate', '___ gives yogurt its tang.', 'leftovers', 'takeout', 'buffet', 'Fermentation', 'D'),
+  ('foods', 'advanced', 'Mushrooms add ___ to the broth.', 'Sous vide', 'umami', 'Emulsify', 'confit', 'B'),
+  ('foods', 'advanced', '___ oil and vinegar for dressing.', 'foodborne illness', 'Emulsify', 'Molecular gastronomy', 'HACCP', 'B'),
+  ('foods', 'advanced', 'Duck ___ is slow-cooked in fat.', 'macronutrient', 'glycemic index', 'micronutrient', 'confit', 'D'),
+  ('foods', 'advanced', '___ keeps meat evenly cooked.', 'Food insecurity', 'Probiotic', 'Sous vide', 'antioxidant', 'C'),
+  ('foods', 'advanced', '___ transforms textures.', 'Supply chain', 'Molecular gastronomy', 'Sustainable farming', 'Farm-to-table', 'B');

@@ -1,0 +1,3 @@
+INSERT INTO vocabulary_games (word, meaning, category, difficulty, language, example_sentence, example_translation)
+VALUES
+    ('emotional affair', 'duygusal ilişki', 'relationships', 'advanced', 'en', 'An emotional affair can breach trust.', 'Duygusal ilişki güveni ihlal edebilir.');

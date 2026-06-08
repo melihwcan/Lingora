@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@theme {
+  --font-brand: 'Sora', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Class-based dark mode for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
+/* Global smooth color transitions - inside @layer base so Tailwind utilities always win */
+@layer base {
+  *, *::before, *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+
+  .dark,
+  .dark body {
+    background-color: #0a0a0a;
+    color-scheme: dark;
+  }
+}
+
+/* Don't apply transition to elements that animate (spinners etc.) */
+.animate-spin {
+  transition: none !important;
+}
+
+/* Word match shake animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+  transition: none !important;
+}
+
+/* Word match history row fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Dashboard mascot */
+@keyframes mascot-idle {
+  0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+  20% { transform: translateY(-6px) scale(1.02) rotate(-3deg); }
+  40% { transform: translateY(-3px) scale(0.98) rotate(2deg); }
+  60% { transform: translateY(-7px) scale(1.03) rotate(3deg); }
+  80% { transform: translateY(-2px) scale(0.99) rotate(-2deg); }
+}
+.animate-mascot-idle {
+  animation: mascot-idle 2.4s ease-in-out infinite;
+  transition: none !important;
+}
+
+@keyframes mascot-bubble-in {
+  from { opacity: 0; transform: translateX(-8px) scale(0.96); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+.animate-mascot-bubble-in {
+  animation: mascot-bubble-in 0.25s ease-out;
+}
+
+@keyframes mascot-cloud-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.animate-mascot-cloud-fade-out {
+  animation: mascot-cloud-fade-out 0.6s ease-out forwards;
+  transition: none !important;
+}
+
+/* Squash-then-splat pop - stepped on like a bug */
+@keyframes mascot-squash-pop {
+  0% { opacity: 1; transform: scale(1, 1); }
+  14% { opacity: 1; transform: scale(1.8, 0.1); }
+  22% { opacity: 0.4; transform: scale(2.1, 0.04); }
+  35% { opacity: 0; transform: scale(2.4, 0); }
+  100% { opacity: 0; transform: scale(2.4, 0); }
+}
+.animate-mascot-squash-pop {
+  animation: mascot-squash-pop 0.55s cubic-bezier(0.92, 0, 1, 0.12) forwards;
+  transition: none !important;
+}
+
+/* Brief white/purple flash on pop impact */
+@keyframes mascot-pop-flash {
+  0% { opacity: 0; }
+  40% { opacity: 0.55; }
+  100% { opacity: 0; }
+}
+.animate-mascot-pop-flash {
+  animation: mascot-pop-flash 50ms ease-out forwards;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 45%,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(196, 181, 253, 0.45) 35%,
+    rgba(167, 139, 250, 0.2) 55%,
+    transparent 75%
+  );
+  transition: none !important;
+}
+
+/* Subtle screen shake on mascot container */
+@keyframes mascot-pop-shake {
+  0%, 100% { transform: translateX(0); }
+  12% { transform: translateX(-3px); }
+  24% { transform: translateX(3px); }
+  36% { transform: translateX(-2px); }
+  48% { transform: translateX(2px); }
+  60% { transform: translateX(-1px); }
+}
+.animate-mascot-pop-shake {
+  animation: mascot-pop-shake 180ms ease-out forwards;
+  transition: none !important;
+}
+
+/* Local flat splats around mascot on pop */
+@keyframes mascot-local-splat {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--splat-rotation)) scale(0.08, 0.35);
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--splat-rotation)) scale(1.5, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--splat-rotation)) rotate(var(--splat-angle)) translateX(var(--splat-distance)) scale(0.55, 0.28);
+  }
+}
+.animate-mascot-local-splat {
+  animation: mascot-local-splat 0.55s cubic-bezier(0.05, 0.98, 0.18, 1) forwards;
+  transition: none !important;
+}
+
+/* Full-viewport bug-squash splatter - flat smears, not droplets */
+@keyframes mascot-splash-burst {
+  from {
+    opacity: 1;
+    transform: rotate(var(--splat-rotation)) scale(0.12, 0.55) translate(0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(var(--splat-rotation)) scale(1, 1) translate(var(--burst-x), var(--burst-y));
+  }
+}
+
+@keyframes mascot-splash-fall {
+  0% {
+    opacity: 1;
+    transform: rotate(var(--splat-rotation)) scale(1, 1) translate(var(--burst-x), var(--burst-y));
+  }
+  65% {
+    opacity: 0.9;
+    transform: rotate(var(--splat-rotation)) scale(0.85, 0.55) translate(
+      calc(var(--burst-x) + var(--drift-x) * 0.55),
+      calc(var(--burst-y) + var(--fall-y) * 0.55)
+    );
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--splat-rotation)) scale(0.3, 0.1) translate(
+      calc(var(--burst-x) + var(--drift-x)),
+      calc(var(--burst-y) + var(--fall-y))
+    );
+  }
+}
+
+.animate-mascot-splash-splat {
+  animation:
+    mascot-splash-burst 300ms cubic-bezier(0.02, 0.98, 0.12, 1) var(--splash-delay, 0ms) forwards,
+    mascot-splash-fall var(--fall-duration, 2.8s) ease-out calc(var(--splash-delay, 0ms) + 300ms) forwards;
+  transition: none !important;
+}
+
+.animate-mascot-splash-glob {
+  animation:
+    mascot-splash-burst 300ms cubic-bezier(0.02, 0.98, 0.12, 1) var(--splash-delay, 0ms) forwards,
+    mascot-splash-fall var(--fall-duration, 3.2s) ease-out calc(var(--splash-delay, 0ms) + 300ms) forwards;
+  transition: none !important;
+}
+
+/* Click-hint pointer on mascot */
+@keyframes mascot-click-hint {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 1; }
+  50% { transform: translate(-3px, 4px) scale(1.12); opacity: 0.85; }
+}
+.animate-mascot-click-hint {
+  animation: mascot-click-hint 1.1s ease-in-out infinite;
+}
+
+@keyframes mascot-click-ripple {
+  0% { transform: scale(0.85); opacity: 0.7; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+.animate-mascot-click-ripple {
+  animation: mascot-click-ripple 1.6s ease-out infinite;
+}
+
+@keyframes mascot-click-ripple-delayed {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+.animate-mascot-click-ripple-delayed {
+  animation: mascot-click-ripple 1.6s ease-out 0.5s infinite;
+}

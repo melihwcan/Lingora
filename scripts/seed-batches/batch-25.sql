@@ -1,0 +1,22 @@
+INSERT INTO vocabulary_games (word, meaning, category, difficulty, language, example_sentence, example_translation)
+VALUES
+  ('manipulation', 'manipülasyon', 'relationships', 'advanced', 'en', 'Manipulation distorts another person''s choices.', 'Manipülasyon başka birinin seçimlerini çarpıtır.'),
+  ('triangulation', 'üçgenleme', 'relationships', 'advanced', 'en', 'Triangulation pulls a third person into conflict.', 'Üçgenleme üçüncü bir kişiyi çatışmaya çeker.'),
+  ('stonewalling', 'duvar örme', 'relationships', 'advanced', 'en', 'Stonewalling shuts down difficult talks.', 'Duvar örme zor konuşmaları kapatır.'),
+  ('contempt', 'aşağılama', 'relationships', 'advanced', 'en', 'Contempt predicts relationship failure.', 'Aşağılama ilişki başarısızlığını öngörür.'),
+  ('repair attempt', 'onarım girişimi', 'relationships', 'advanced', 'en', 'A repair attempt can stop escalation.', 'Bir onarım girişimi tırmanmayı durdurabilir.'),
+  ('interpersonal dynamics', 'kişilerarası dinamikler', 'relationships', 'advanced', 'en', 'Interpersonal dynamics shift in groups.', 'Kişilerarası dinamikler gruplarda değişir.'),
+  ('social reciprocity', 'sosyal karşılıklılık', 'relationships', 'advanced', 'en', 'Social reciprocity balances give and take.', 'Sosyal karşılıklılık vermeyi ve almayı dengeler.'),
+  ('kinship', 'akrabalık', 'relationships', 'advanced', 'en', 'Kinship ties remain strong in rural areas.', 'Akrabalık bağları kırsal bölgelerde güçlü kalır.'),
+  ('chosen family', 'seçilmiş aile', 'relationships', 'advanced', 'en', 'Friends can become a chosen family.', 'Arkadaşlar seçilmiş aile olabilir.'),
+  ('intergenerational trauma', 'nesiller arası travma', 'relationships', 'advanced', 'en', 'Intergenerational trauma affects family patterns.', 'Nesiller arası travma aile kalıplarını etkiler.'),
+  ('marital counseling', 'evlilik danışmanlığı', 'relationships', 'advanced', 'en', 'Marital counseling improved their communication.', 'Evlilik danışmanlığı iletişimlerini iyileştirdi.'),
+  ('premarital agreement', 'evlilik öncesi anlaşma', 'relationships', 'advanced', 'en', 'They signed a premarital agreement.', 'Evlilik öncesi anlaşma imzaladılar.'),
+  ('polyamory', 'poliamori', 'relationships', 'advanced', 'en', 'Polyamory requires honest multi-partner talks.', 'Poliamori dürüst çok partnerli konuşmalar gerektirir.'),
+  ('asexuality', 'aseksüellik', 'relationships', 'advanced', 'en', 'Asexuality is a valid identity spectrum.', 'Aseksüellik geçerli bir kimlik spektrumudur.'),
+  ('misattunement', 'uyumsuzluk', 'relationships', 'advanced', 'en', 'Parent-child misattunement causes distress.', 'Ebeveyn-çocuk uyumsuzluğu sıkıntı yaratır.'),
+  ('differentiation of self', 'benlik farklılaşması', 'relationships', 'advanced', 'en', 'Differentiation of self reduces fusion in couples.', 'Benlik farklılaşması çiftlerde kaynaşmayı azaltır.'),
+  ('relational aggression', 'ilişkisel saldırganlık', 'relationships', 'advanced', 'en', 'Relational aggression spreads rumors quietly.', 'İlişkisel saldırganlık dedikoduyu sessizce yayar.'),
+  ('social exclusion', 'sosyal dışlanma', 'relationships', 'advanced', 'en', 'Social exclusion hurts adolescent wellbeing.', 'Sosyal dışlanma ergen refahını incitir.'),
+  ('parasocial relationship', 'parasosyal ilişki', 'relationships', 'advanced', 'en', 'Fans form a parasocial relationship with stars.', 'Hayranlar yıldızlarla parasosyal ilişki kurar.'),
+  ('emotional affair', 'duygusal ilişki', 'relationships', 'advanced', 'en', 'An emotional affair can breach trust.', 'Duygusal ilişki güveni ihlal edebilir.');
